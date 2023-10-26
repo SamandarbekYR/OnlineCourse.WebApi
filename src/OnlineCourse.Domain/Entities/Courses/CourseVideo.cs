@@ -12,7 +12,7 @@ namespace OnlineCourse.Domain.Entities.Courses
     {
         [Column("course_id")]
         public Guid CourseId { get; set; }
-        public Course Course { get; set; } = default!;
+        public CourseVideo Course { get; set; } = default!;
         [Column("title")]
         public string Title { get; set; } = string.Empty;
         [Column("description")]

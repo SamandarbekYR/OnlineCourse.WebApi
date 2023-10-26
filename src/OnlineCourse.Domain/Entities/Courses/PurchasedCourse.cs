@@ -16,7 +16,7 @@ namespace OnlineCourse.Domain.Entities.Courses
         public User User { get; set; } = default!;
         [Column("course_id")]
         public Guid CourseId { get; set; }
-        public Course Course { get; set; } = default!;
+        public CourseVideo Course { get; set; } = default!;
         [Column("created_at")]
         public DateTime CreatedAt { get; set; }
     }
