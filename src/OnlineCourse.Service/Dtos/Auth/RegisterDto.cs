@@ -12,7 +12,6 @@ namespace OnlineCourse.Service.Dtos.Auth
         public string LastName { get; set; } = string.Empty;
         public string PhoneNumber { get; set; } = string.Empty;
         public string Gmail { get; set; } = string.Empty;
-        public string Image { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
     }
 }
