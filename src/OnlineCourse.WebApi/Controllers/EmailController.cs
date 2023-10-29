@@ -16,27 +16,6 @@ namespace OnlineCourse.WebApi.Controllers
         [HttpPost]
         public async Task<bool> SendEmail(string body)
         {
-            // SMTP server bilan ulanish
-            //using var smtp = new SmtpClient();
-            //smtp.Connect("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
-
-            //// Autentifikatsiya
-            //smtp.Authenticate("SamandarbekYR@gmail.com", "cyiq xqrn cxul nvcf");
-
-            //// Xabar tayyorlash
-            //var email = new MimeMessage();
-            //email.From.Add(MailboxAddress.Parse("SamandarbekYR@gmail.com"));
-            //email.To.Add(MailboxAddress.Parse("uzgrandmaster@gmail.com"));
-            //email.Subject = "Test Email Subject";
-            //email.Body = new TextPart(TextFormat.Html) { Text = body };
-
-            //// Xabarni yuborish
-            //smtp.Send(email);
-
-            //// Server bilan ulanishni yakunlash
-            //smtp.Disconnect(true);
-
-            //return Ok();
             try
             {
                 var mail = new MimeMessage();
