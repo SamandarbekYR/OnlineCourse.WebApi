@@ -2,16 +2,12 @@
 using OnlineCourse.DataAccess.Interfaces;
 using OnlineCourse.DataAccess.Interfaces.Courses;
 using OnlineCourse.DataAccess.Interfaces.Users;
+using OnlineCourse.DataAccess.Repositories.Courses;
 using OnlineCourse.DataAccess.Repositories.Users;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineCourse.DataAccess.Repositories
 {
-    public class UnitOfWork : IUnitOfWork,IDisposable
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private AppDbContext _dbSet;
 
@@ -23,12 +19,14 @@ namespace OnlineCourse.DataAccess.Repositories
 
         public UnitOfWork(AppDbContext appDb)
         {
-          this._dbSet = appDb;
+            this._dbSet = appDb;
 
-
-
+            this.User = new UserRepository(appDb);
+            this.UserRole = new UserRoleRepository(appDb);
+            this.Course = new CourseRepository(appDb);
+            this.CourseVideo = new CourseVideoRepository(appDb);
+            this.PurchasedCourse = new PurchasedCourseRepository(appDb);
         }
-
 
         public void Dispose()
         {
@@ -37,7 +35,7 @@ namespace OnlineCourse.DataAccess.Repositories
 
         public int SaveChanges()
         {
-            throw new NotImplementedException();
+            return this._dbSet.SaveChanges();
         }
     }
 }

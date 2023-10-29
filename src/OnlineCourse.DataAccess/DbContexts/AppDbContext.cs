@@ -17,7 +17,7 @@ namespace OnlineCourse.DataAccess.DbContexts
         { }
         DbSet<UserRole> UserRoles { get; set; }
         DbSet<User> Users { get; set; }
-        DbSet<> Courses { get; set; }
+        DbSet<Course> Courses { get; set; }
         DbSet<CourseVideo> CourseVideos { get; set; }
         DbSet<PurchasedCourse> Purchases { get; set;} 
     }
