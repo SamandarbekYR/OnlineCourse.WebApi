@@ -28,7 +28,7 @@ namespace OnlineCourse.DataAccess.Repositories
                 this._dbSet.Remove(entity);
             }
         }
-        public IQueryable<TEntity> GetAll() => _dbSet;
+        public IQueryable<TEntity> GetAll() => _dbSet.OrderBy(p =>p.Id).AsNoTracking();
         public async Task<TEntity?> GetByIdAsync(Guid id) => await _dbSet.FindAsync(id);
         public void Update(Guid id, TEntity entity)
         {
